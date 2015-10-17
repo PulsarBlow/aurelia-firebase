@@ -1,0 +1,19 @@
+{
+  "name": "aurelia-firebase",
+  "version": "0.1.0-beta",
+  "description": "A Firebase plugin for Aurelia.",
+  "keywords": [
+    "aurelia",
+    "firebase",
+    "plugin"
+  ],
+  "homepage": "https://github.com/PulsarBlow/aurelia-firebase",
+  "license": "MIT",
+  "authors": [
+    "Alain Méreaux <pulsarblow@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PulsarBlow/aurelia-firebase"
+  }
+}
