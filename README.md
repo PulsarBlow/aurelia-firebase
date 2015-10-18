@@ -94,8 +94,9 @@ export function configure(aurelia) {
 }
 ```
 
->Note: if you want to access the global configuration instance at a later point in time, you can inject it:
-``` javascript
+> Note: if you want to access the global configuration instance at a later point in time, you can inject it:
+
+```javascript
 import {Configuration} from 'aurelia-firebase';
 import {inject} from 'aurelia-framework';
 
@@ -109,8 +110,9 @@ export class MyVM{
 }
 ```
 
-##Possible configuration
->Note: all these can be chained:
+##Possible configuration  
+
+> Note: all these can be chained:
 ``` javascript
 (config) => { 
   config
