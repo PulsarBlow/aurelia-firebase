@@ -82,7 +82,8 @@ export function configure(aurelia) {
 
 #Configuration
 ##One config to rule them all
-The firebase plugin has one global configuration instance, which is passed to an optional callback function when you first install the plugin:
+The firebase plugin has one global configuration instance, which is passed to an optional callback function when you first install the plugin:  
+
 ``` javascript
 export function configure(aurelia) {
   aurelia.use
@@ -112,7 +113,8 @@ export class MyVM{
 
 ##Possible configuration  
 
-> Note: all these can be chained:
+> Note: all these can be chained:  
+
 ``` javascript
 (config) => { 
   config
