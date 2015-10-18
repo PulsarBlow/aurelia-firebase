@@ -1,22 +1,27 @@
 # aurelia-firebase
 
-[![Join the chat at https://gitter.im/PulsarBlow/aurelia-firebase](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/PulsarBlow/aurelia-firebase?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Circle CI](https://circleci.com/gh/PulsarBlow/aurelia-firebase/tree/master.svg?style=svg)](https://circleci.com/gh/PulsarBlow/aurelia-firebase/tree/master)  
+ [![Circle CI](https://circleci.com/gh/PulsarBlow/aurelia-firebase/tree/master.svg?style=svg)](https://circleci.com/gh/PulsarBlow/aurelia-firebase/tree/master)   [![Join the chat at https://gitter.im/aurelia/discuss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aurelia/discuss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A Firebase plugin for [Aurelia](http://aurelia.io/) that supports Promises.  
-Developed from scratch following aurelia's spirit.
+A Firebase plugin for [Aurelia](http://aurelia.io/) that supports Authentication, Reactive data collections (auto-sync) and other Firebase features. This plugin has been developed from scratch in order to provide an ubiquitous aurelia's experience and a [Promise/A+](https://promisesaplus.com/) support.
 
 This is an early version which comes with :
 
-- A complete firebase password authentication support
+- A complete firebase password authentication support.
 - A reactive collection providing auto-sync with Firebase server.
 
-This version is a work in progress, and lacks some Firebase features :
+Roadmap for the next versions :
  
-- Full Query support (order, startAt, endAt etc..)
-- Priorities
-- Transactions
+* Full Query support (order, startAt, endAt etc..)
+* Priorities
+* Transactions
+* Third party authentications (Google, FB etc..)
+
+###Demo
+
+[Aurelia on Fire](https://github.com/PulsarBlow/aureliaonfire) is a demo app providing complete working implementation of the plugin features.
 
 Play with the demo : https://aureliaonfire.azurewebsites.net  
+Check the demo source : https://github.com/PulsarBlow/aureliaonfire
 
 # Installation
 
@@ -25,7 +30,7 @@ Play with the demo : https://aureliaonfire.azurewebsites.net
 Go into your project and verify it's already `npm install`'ed and `jspm install`'ed. Now execute following command to install the plugin via JSPM:
 
 ```
-jspm install aurelia-firebase
+jspm install aurelia-firebase=github:pulsarblow/aurelia-firebase
 ```
 
 this will add the plugin into your `jspm_packages` folder as well as an mapping-line into your `config.js` as:
@@ -50,6 +55,7 @@ Change the *aurelia-app* attribute to *aurelia-app="main"*.
 <body aurelia-app="main">
 ```
 The aurelia framework will now bootstrap the application by looking for your **main.js** file and executing the exported *configure* method. Go ahead and add a new **main.js** file with these contents:
+
 ``` javascript
 export function configure(aurelia) {
   aurelia.use
@@ -58,7 +64,6 @@ export function configure(aurelia) {
 
   aurelia.start().then(a => a.setRoot('app', document.body));
 }
-
 ```
 
 #### Load the plugin
@@ -74,10 +79,6 @@ export function configure(aurelia) {
   aurelia.start().then(a => a.setRoot('app', document.body));
 }
 ```
-
-# Getting started
-
-TBD...
 
 #Configuration
 ##One config to rule them all
@@ -98,27 +99,34 @@ export function configure(aurelia) {
 import {Configuration} from 'aurelia-firebase';
 import {inject} from 'aurelia-framework';
 
->@inject(Configuration)
+@inject(Configuration)
 export class MyVM{
+  _config = null;
   constructor(config)
   {
-
->  }
+    this._config = config;
+  }
 }
 ```
 
 ##Possible configuration
 >Note: all these can be chained:
 ``` javascript
-(config) => { config.setFirebaseUrl('https://myapp.firebaseio.com/').setMonitorAuthChange(true); }
+(config) => { 
+  config
+    .setFirebaseUrl('https://myapp.firebaseio.com/')
+    .setMonitorAuthChange(true);
+}
 ```
 
 ###config.setFirebaseUrl(firebaseUrl: string)
 ``` javascript
-(config) => { config.setFirebaseUrl('https://myapp.firebaseio.com/'); }
+(config) => {
+  config.setFirebaseUrl('https://myapp.firebaseio.com/');
+}
 ```
-Sets the Firebase URL where your app answers.
-This is required and the plugin will not start if not provided.
+> Sets the Firebase URL where your app lives.
+> This is required and the plugin will not start if not provided.
 
 ###config.setMonitorAuthChange(monitorAuthChange: boolean)
 ``` javascript
@@ -134,3 +142,6 @@ The authentication manager handles authentication aspects in the plugin.
 #ReactiveCollection
 
 The ReactiveCollection class handles firebase data synchronization.  
+
+# Sample implementation
+Check the sample implementation at : https://github.com/PulsarBlow/aureliaonfire
