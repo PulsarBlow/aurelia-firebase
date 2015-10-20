@@ -129,6 +129,7 @@ export class MyViewModel {
 ####**setFirebaseUrl(firebaseUrl: string)**
 > Sets the Firebase URL where your Firebase data live.
 > This is required and the plugin will not start if not provided.
+
 ``` javascript
 (config) => {
   config.setFirebaseUrl('https://myapp.firebaseio.com/');
@@ -221,7 +222,7 @@ You can use this property in your views databindings:
 
 #Events Publisher
 
-Beside monitoring the user authentication state changes internally (through the `currentUser` property), the AuthManager also triggers application wide events.
+Beside monitoring the user authentication state changes internally (with these changes exposed through the `currentUser` property), the AuthManager also triggers application wide events.
 It uses the aurelia's `EventAggregator` to do so.
 
 [Events Publisher documentation](doc/events-publisher.md)
