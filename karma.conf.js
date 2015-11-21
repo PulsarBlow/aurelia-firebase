@@ -1,17 +1,4 @@
 // Karma configuration
-
-var babelOptions = {
-  sourceMap: 'inline',
-  modules: 'system',
-  moduleIds: false,
-  comments: false,
-  loose: "all",
-  optional: [
-    "es7.decorators",
-    "es7.classProperties"
-  ]
-};
-
 module.exports = function(config) {
   config.set({
 
@@ -27,7 +14,9 @@ module.exports = function(config) {
       // Edit this to your needs
       loadFiles: ['src/**/*.js', 'test/**/*.js'],
       paths: {
-        '*': '*.js'
+        '*': '*.js',
+        'github:*': 'jspm_packages/github/*.js',
+        'npm:*': 'jspm_packages/npm/*.js'
       }
     },
 
@@ -49,7 +38,14 @@ module.exports = function(config) {
     },
 
     'babelPreprocessor': {
-      options: babelOptions
+      options: {
+        sourceMap: 'inline',
+        moduleIds: false,
+        optional: [
+          "es7.decorators",
+          "es7.classProperties"
+        ]
+      }
     },
 
     // test results reporter to use
