@@ -1,6 +1,6 @@
 {
   "name": "aurelia-firebase",
-  "version": "0.2.0-beta",
+  "version": "0.2.1-beta",
   "description": "A Firebase plugin for Aurelia.",
   "keywords": [
     "aurelia",

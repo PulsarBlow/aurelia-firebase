@@ -1,3 +1,8 @@
+### 0.2.1-beta (2015-11-21)
+#### Features
+
+* Downgraded some Karma dependencies to fix coverage and test stability issues ([bde3c3d2](http://github.com/pulsarblow/aurelia-firebase/commit/bde3c3d2977e59ac97bdc54bb397ed809863e046))
+
 ### 0.2.0-beta (2015-11-21)
 #### Features
 
