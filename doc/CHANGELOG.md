@@ -1,4 +1,9 @@
-### 0.1.0 (2015-10-17)
+### 0.2.0-beta (2015-11-21)
+#### Features
+
+* Updated aurelia to 1.0.0-beta.1 ([489bad88](http://github.com/pulsarblow/aurelia-firebase/commit/489bad881ecffbda7525f7ea033167f39a5bd85a))
+
+### 0.1.0-beta (2015-10-17)
 
 #### Features
 
