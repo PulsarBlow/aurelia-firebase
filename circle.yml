@@ -1,5 +1,5 @@
 machine:
-  note:
+  node:
     version: 0.12.0
 dependencies:
   post:
