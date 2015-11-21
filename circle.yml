@@ -1,0 +1,10 @@
+machine:
+  note:
+    version: 0.12.0
+dependencies:
+  post:
+    - jspm config registries.github.auth JSPM_GITHUB_AUTH_TOKEN # public_repo token. Configure it directory in circleci project settings. Used to counter github api rate limit.
+    - jspm install -y
+general:
+  artifacts:
+    - "coverage"
