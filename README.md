@@ -67,7 +67,7 @@ export function configure(aurelia) {
 ```
 
 #### Load the plugin
-During bootstrapping phase, you can now include the validation plugin:
+During bootstrapping phase, you can now include the plugin:
 
 ``` javascript
 export function configure(aurelia) {
