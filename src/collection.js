@@ -78,7 +78,7 @@ export class ReactiveCollection {
       this._onItemRemoved(snapshot);
     });
     query.on('child_changed', (snapshot, previousKey) => {
-      this._onItemChanded(snapshot, previousKey);
+      this._onItemChanged(snapshot, previousKey);
     });
     query.on('child_moved', (snapshot, previousKey) => {
       this._onItemMoved(snapshot, previousKey);
